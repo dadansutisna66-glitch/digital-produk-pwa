@@ -1,0 +1,16 @@
+PANDUAN SINGKAT
+===============
+1. URL /exec sudah terisi di index.html. Jika ingin ganti nama/warna, lihat catatan di bawah.
+   (Opsional: ganti "Aplikasi Saya" di <title> dan apple-mobile-web-app-title,
+    serta nama di manifest.json. Warna: ganti #5b3fd0 di index.html dan manifest.json.)
+2. Ganti icon-192.png dan icon-512.png dengan logo Anda (PNG persegi, nama file sama).
+3. Upload SEMUA file ke repo GitHub (root), lalu Settings > Pages > Branch main / root > Save.
+4. Buka https://username.github.io/nama-repo/ di HP:
+   - Android Chrome: menu titik tiga > Instal aplikasi
+   - iPhone Safari: Bagikan > Tambahkan ke Layar Utama
+
+Di Code.gs pastikan doGet memakai:
+  .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
+Deploy: Execute as Me, Who has access Anyone.
+
+Jika mengubah file pembungkus, naikkan CACHE di sw.js (v1 > v2).

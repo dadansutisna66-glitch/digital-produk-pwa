@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#5b3fd0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Digital Produk">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <title>Digital Produk Premium</title>
+  <style>
+    html,body{margin:0;height:100%;background:#fff;font-family:sans-serif}
+    iframe{border:0;width:100%;height:100%;display:block}
+    #load{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;color:#5b3fd0;font-size:18px;transition:opacity .3s}
+  </style>
+</head>
+<body>
+  <div id="load">Memuat aplikasi...</div>
+  <iframe id="app" allow="camera; microphone; geolocation; clipboard-write"></iframe>
+  <script>
+    // ====== GANTI URL DI BAWAH INI DENGAN URL /exec APPS SCRIPT ANDA ======
+    var APP_URL = "https://script.google.com/macros/s/AKfycbzZdrHXn-82yvV8wcApYm01LPgI0U43lT4x057Q46TfKExDvRfmz6uDkFhTlz9Cy-cPhQ/exec";
+    // ======================================================================
+    var f = document.getElementById('app');
+    f.onload = function(){ document.getElementById('load').style.opacity = 0;
+      setTimeout(function(){ document.getElementById('load').style.display='none'; }, 300); };
+    f.src = APP_URL;
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+  </script>
+</body>
+</html>
